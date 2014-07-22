@@ -1,4 +1,4 @@
-tidy_my_images
+Tidy My Images
 ==============
 
 Python script to classify images from their EXIF datetime
