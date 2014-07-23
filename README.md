@@ -8,6 +8,11 @@ Motivation
 
 I have a bunch of directories where I usually copy my images. But at some point, they all become 'to_classify', 'to_classify_2' , and so on. I like to get the images properly ordered in subdirectories root/YYYY/MM/filename with a filename being YYYY_MM_DD_hh:mm:ss.xxx where xxx is the original extension. The script tidy_my_images helps in doing the job by using the EXIF datetime tag of the images. 
 
+Installation
+------------
+
+The script relies on [exif-py](https://github.com/ianare/exif-py)
+
 Usage
 -----
 
