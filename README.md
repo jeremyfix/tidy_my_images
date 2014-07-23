@@ -11,7 +11,7 @@ I have a bunch of directories where I usually copy my images. But at some point,
 Installation
 ------------
 
-The script relies on [exif-py](https://github.com/ianare/exif-py)
+The script relies on [exif-py](https://github.com/ianare/exif-py) and standard python otherwise. It requires at least python 2.7 as it is using argparse.
 
 Usage
 -----
