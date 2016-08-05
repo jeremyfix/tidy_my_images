@@ -30,7 +30,7 @@ import shutil
 # For extracting the Exif info of the images
 # We use https://github.com/ianare/exif-py
 # apt-get install python-exif
-import EXIF
+import exifread
 
 # PIL does not support all the image types (e.g. CR2)
 #from PIL import Image
@@ -56,7 +56,7 @@ def get_exif_datetime(path_name):
     f = open(path_name, 'rb')
     
     # Extract the DateTimeOriginal exif tag
-    tags = EXIF.process_file(f, details=False, stop_tag='DateTimeOriginal',strict=True )
+    tags = exifread.process_file(f, details=False, stop_tag='DateTimeOriginal',strict=True )
     f.close()
 
     if(tags.has_key('EXIF DateTimeOriginal')):
@@ -77,6 +77,8 @@ for root, dirnames, filenames in os.walk(src_root_dir):
         full_filename = os.path.join(root, filename)
 
         try:
+            if(verbosity_mode >= 1):
+                print("Reading datetime of %s" % full_filename)
             exif_datetime = get_exif_datetime(full_filename)
         except KeyError:
             # The file is ignored but we copy it in
